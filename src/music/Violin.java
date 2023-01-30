@@ -9,20 +9,22 @@ public class Violin extends StringedInstrument {
 		this.bowWood = BowWood.FIBERGLASS;
 	}
 	
+	public Violin() {
+		
+	}
+	
 	public BowWood getBowWood() {
 		return bowWood;
 	}
 	
 	public void setBowWood() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("\nChoose the material :");
+		System.out.println("\n\nChoose the material :");
 		System.out.println("\t 1 . Carbon");
 		System.out.println("\t 2 . Fibre glass");
 		System.out.println("\t 3 . Massaranduba");
-		System.out.println("\t 4 . Leave");
 	
 		int Choice ;
-		do {
 		
 			Choice	= scanner.nextInt();
 			switch(Choice) {
@@ -36,7 +38,6 @@ public class Violin extends StringedInstrument {
 				 bowWood = BowWood.MASSARANDUBA;
 				 break;
 			}
-		}while(Choice != 4);
 		System.out.println("\nThe Bow is now in "+bowWood);
 	}
 	
@@ -64,6 +65,15 @@ public class Violin extends StringedInstrument {
 			
 		}while(choice != 4);
 
+	}
+	
+	public void initialize() {
+		super.initialize();
+		
+		
+		System.out.print("\n\nNumber of string : ");
+		setBowWood();
+	
 	}
 
 }

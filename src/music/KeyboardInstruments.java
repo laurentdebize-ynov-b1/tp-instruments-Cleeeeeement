@@ -9,6 +9,10 @@ public abstract class KeyboardInstruments extends Instruments {
 		this.keyNumber = keyNumber;
 	}
 	
+	public KeyboardInstruments() {
+		
+	}
+	
 	public int getKeyNumber(){
 		return keyNumber;
 	}
@@ -33,5 +37,15 @@ public abstract class KeyboardInstruments extends Instruments {
 			
 		}while(choice != 2);
 
+	}
+	
+	public void initialize() {
+		super.initialize();
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("\nNumber of keys : ");
+		this.keyNumber = scanner.nextInt();
+		
+		
 	}
 }

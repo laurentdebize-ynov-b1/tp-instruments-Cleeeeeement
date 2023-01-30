@@ -9,12 +9,26 @@ public class ArrangerKeyboard extends KeyboardInstruments {
 		this.numberOfSound = numberOfSound;
 	}
 	
+	public ArrangerKeyboard() {
+		
+	}
+	
 	public int getSoundNumber() {
 		return numberOfSound;
 	}
 	
 	public String toString() {
 		return "Aranger keyboard = " + super.toString() +", number of sounds:" + numberOfSound;
+	}
+	
+	public void initialize() {
+		super.initialize();
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("\nNumber of sounds : ");
+		this.numberOfSound = scanner.nextInt();
+		
+		
 	}
 	
 	

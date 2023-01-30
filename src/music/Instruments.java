@@ -15,6 +15,10 @@ public abstract class Instruments {
 		this.state = State.STOCK;
 	}
 	
+	public Instruments() {
+		this.state = State.STOCK;
+	}
+	
 	public float getPrice() {
 		return price;
 	}
@@ -62,6 +66,22 @@ public abstract class Instruments {
 		}while(choice != 2);
 
 	}
-
+	public void initialize() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the specificities of the instrument");
+		System.out.print("\nPrice : ");
+		this.price = scanner.nextInt();
+		scanner.nextLine();
+		
+		System.out.print("\n\nBrand : ");
+		this.brand = scanner.nextLine();
+		scanner.nextLine();
+		
+		System.out.print("\n\nModel : ");
+		this.model = scanner.nextLine();
+		scanner.nextLine();
+		
+			
+	}
 
 }

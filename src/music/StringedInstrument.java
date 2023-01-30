@@ -18,6 +18,11 @@ public abstract class StringedInstrument extends Instruments implements Tunable 
 		this.wood = wood;
 	}
 	
+	public StringedInstrument() {
+		this.tuneDate = java.time.LocalDate.now(); 
+		this.tuneTime = java.time.LocalTime.now();
+	}
+	
 	@Override
 	public void tune() {
 		tuneDate = java.time.LocalDate.now();
@@ -55,6 +60,33 @@ public abstract class StringedInstrument extends Instruments implements Tunable 
 			
 		}while(choice != 3);
 
+	}
+	
+	public void initialize() {
+		Scanner scanner = new Scanner(System.in);
+		super.initialize();
+		
+		System.out.print("\n\nNumber of string : ");
+		this.stringNumber = scanner.nextInt();
+		scanner.nextLine();
+		
+		System.out.print("\n\nWood : \n\t1.ALDER\n\t2. ASH\n\t3. EPICEA\n\t4. CEDAR\n\nchoose : ");
+		int choose = scanner.nextInt();
+		switch (choose) {
+			case 1 :
+				this.wood = StringedWood.ALDER;
+				break;
+			case 2 : 
+				this.wood = StringedWood.ASH;
+				break;
+			case 3 :
+				this.wood = StringedWood.EPICEA;
+				break;
+			case 4 : 
+				this.wood = StringedWood.CEDAR;
+				break;
+		}
+		
 	}
 
 }

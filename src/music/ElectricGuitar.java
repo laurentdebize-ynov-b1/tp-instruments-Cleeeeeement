@@ -12,6 +12,10 @@ public class ElectricGuitar extends StringedInstrument {
 		this.micBrand = micBrand;
 	}
 	
+	public ElectricGuitar() {
+		
+	}
+	
 	public String getMicBrand() {
 		return micBrand;
 	}
@@ -32,10 +36,9 @@ public class ElectricGuitar extends StringedInstrument {
 		System.out.println("\t 1 . Classic");
 		System.out.println("\t 2 . Open G");
 		System.out.println("\t 3 . Drop D");
-		System.out.println("\t 4 . Leave");
 	
 		int Choice ;
-		do {
+		
 		
 			Choice	= scanner.nextInt();
 			switch(Choice) {
@@ -49,10 +52,10 @@ public class ElectricGuitar extends StringedInstrument {
 				 break;
 			 case 3 :
 				 tuneChoice = Tune.DROPD;
-				 System.out.println("the new tunning is rop dclassic");
+				 System.out.println("the new tunning is classic");
 				 break;
 			}
-		}while(Choice != 4);
+		
 		super.tune();
 		System.out.println("This instrument is now tuned in "+ tuneChoice);
 	}
@@ -86,6 +89,17 @@ public class ElectricGuitar extends StringedInstrument {
 			
 		}while(choice != 4);
 
+	}
+	
+	public void initialize() {
+		Scanner scanner = new Scanner(System.in); 
+		super.initialize();
+		
+		System.out.print("\n\nMic brand : ");
+		this.micBrand = scanner.nextLine();
+		scanner.nextLine();
+		
+		tune();
 	}
 
 }

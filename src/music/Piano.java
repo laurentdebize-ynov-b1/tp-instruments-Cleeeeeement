@@ -17,6 +17,11 @@ public class Piano extends KeyboardInstruments implements Tunable {
 		this.hammerWood = hammerWood;
 	}
 	
+	public Piano() {
+		this.tuneDate = java.time.LocalDate.now(); 
+		this.tuneTime = java.time.LocalTime.now();
+	}
+	
 	public HammerWood getHammerWood() {
 		return hammerWood;
 	}
@@ -27,10 +32,10 @@ public class Piano extends KeyboardInstruments implements Tunable {
 		System.out.println("\t 1 . Beech");
 		System.out.println("\t 2 . Walnut");
 		System.out.println("\t 3 . Mahogany");
-		System.out.println("\t 4 . Leave");
+
 	
 		int Choice ;
-		do {
+		
 		
 			Choice	= scanner.nextInt();
 			switch(Choice) {
@@ -44,7 +49,7 @@ public class Piano extends KeyboardInstruments implements Tunable {
 				 hammerWood = HammerWood.MAHOGANY;
 				 break;
 			}
-		}while(Choice != 4);
+		
 		System.out.println("\nThe Hammers are now in "+ hammerWood);
 	}
 
@@ -59,7 +64,7 @@ public class Piano extends KeyboardInstruments implements Tunable {
 	}
 	
 	public String toString() {
-		return "Piano = "+super.toString() + ", hammer wood:" + hammerWood ;
+		return "Piano = "+super.toString() + ", hammer wood:" + hammerWood+", last tune:" + tuneDate + " at " + tuneTime ;
 	}
 	
 	public void editMenu() {
@@ -83,6 +88,11 @@ public class Piano extends KeyboardInstruments implements Tunable {
 			
 		}while(choice != 4);
 
+	}
+	
+	public void initialize() {
+		super.initialize();
+		setHammerWood();
 	}
 
 }

@@ -1,6 +1,8 @@
 package music;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -27,12 +29,17 @@ public class Main {
 	ArrangerKeyboard arranger = new ArrangerKeyboard(300,"refef","effef",81,10);
 	ElectricGuitar electricGuitar = new ElectricGuitar(600, "Couic","Couac",7,StringedWood.ASH,"Bose");
 	Violin violin = new Violin(799, "Keanu", "Reeves",6, StringedWood.CEDAR);
+	BassDrum bassDrum = new BassDrum(120, "bomom", "tchachac", 20, PercussionMaterial.WOOD);
+	Tom tom = new Tom(120, "bomom", "tchachac", 20, PercussionMaterial.METAL);
+	AccousticDrum accousticDrum = new AccousticDrum(1100,"fefef","fefef", Status.ASSEMBLED, "Brand",new ArrayList<AccousticPercussion>(Arrays.asList(tom,bassDrum)));
 	
 	ArrayList<Instruments> instruments = new ArrayList<Instruments>();
 	instruments.add(electricGuitar);
 	instruments.add(violin);
 	instruments.add(piano);
 	instruments.add(arranger);
+	instruments.add(accousticDrum);
+	
 	
 	
 	int choice;
@@ -67,6 +74,50 @@ public class Main {
 			choiceDelete = scanner.nextInt();
 			instruments.remove(choiceDelete-1);
 			System.out.println("\nThe instrument has been sold\n");
+			break;
+		case 3 :
+			System.out.print("\nWhat category of instrument do you want to sell ?\n\t1. Stringed instrument\n\t2. Keyboard instrument\n\t3. Percussion Instrument\n\nchoose :");
+			int choiceBuy = scanner.nextInt();
+			switch(choiceBuy) {
+			case 1 :
+				System.out.print("\nWhich instrument ?\n\t1. Electric guitar\n\t2. Violin\n\nchoose :");
+				choiceBuy = scanner.nextInt();
+				switch(choiceBuy) {
+				case 1 :
+					ElectricGuitar newGuitar = new ElectricGuitar();
+					newGuitar.initialize();
+					instruments.add(newGuitar);
+					System.out.println("\n\nYou sold a "+newGuitar.toString()+"\nfor "+newGuitar.getPrice()+"€\n");
+					break;
+				case 2 :
+					Violin newViolin = new Violin();
+					newViolin.initialize();
+					instruments.add(newViolin);
+					System.out.println("\n\nYou sold a "+newViolin.toString()+"\nfor "+newViolin.getPrice()+"€\n");
+					break;
+
+				}
+				break;
+			case 2 :
+				System.out.print("\nWhich instrument ?\n\t1. Arranger KeyBoard\n\t2. Piano\n\nchoose :");
+				choiceBuy = scanner.nextInt();
+				switch(choiceBuy) {
+				case 1 :
+					ArrangerKeyboard newarranger = new ArrangerKeyboard();
+					newarranger.initialize();
+					instruments.add(newarranger);
+					System.out.println("\n\nYou sold a "+newarranger.toString()+"\nfor "+newarranger.getPrice()+"€\n");
+					break;
+				case 2 :
+					Piano newPiano = new Piano();
+					newPiano.initialize();
+					instruments.add(newPiano);
+					System.out.println("\n\nYou sold a "+newPiano.toString()+"\nfor "+newPiano.getPrice()+"€\n");
+					break;
+
+				}
+				
+			}
 			break;
 		case 4 :
 			int stock = 0;
