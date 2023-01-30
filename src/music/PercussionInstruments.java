@@ -11,6 +11,10 @@ public abstract class PercussionInstruments extends Instruments{
 		this.diameter = diameter;
 	}
 	
+	public PercussionInstruments() {
+		
+	}
+	
 	public PercussionMaterial getMaterial() {
 		return material;
 	}
@@ -18,6 +22,7 @@ public abstract class PercussionInstruments extends Instruments{
 	public int getDiameter() {
 		return diameter;
 	}
+	
 	
 	public String demo() {
 		return null;
@@ -44,5 +49,34 @@ public abstract class PercussionInstruments extends Instruments{
 		}while(choice != 3);
 
 	}
+	
+	public void initialize() {
+		Scanner scanner = new Scanner(System.in);
+		
+		super.initialize();
+		
+		System.out.print("\nDiameter : ");
+		this.diameter = scanner.nextInt();
+		
+		
+		int choice ;
+		
+			System.out.print("\n\nMaterial : \n\t1. METAL\n\t2. WOOD\nchoose : ");
+			
+		
+			choice = scanner.nextInt();
+			switch(choice) {
+			case 1 :
+				material = PercussionMaterial.METAL;
+				break;
+			case 2 :
+				material = PercussionMaterial.WOOD;
+				break;
+			
+			}
+			
 
+
+		
+	}
 }

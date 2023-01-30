@@ -7,6 +7,10 @@ public class TimpaniPad extends ElectronicPercussion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public TimpaniPad() {
+		
+	}
+	
 	public String demo() {
 		return " DINNG ";
 	}

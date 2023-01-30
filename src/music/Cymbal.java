@@ -7,6 +7,10 @@ public class Cymbal extends AccousticPercussion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Cymbal() {
+		
+	}
+	
 	public String demo() {
 		return " CHINNNNNNG ";
 	}

@@ -7,6 +7,10 @@ public class Charleston extends AccousticPercussion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Charleston() {
+		
+	}
+	
 	public String demo() {
 		return " TCHHHICK ";
 	}

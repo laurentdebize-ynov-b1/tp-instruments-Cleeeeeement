@@ -7,8 +7,12 @@ public class Tom extends AccousticPercussion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Tom() {
+		
+	}
+	
 	public String demo() {
-		return " POOM ";
+		return " DCHONGG ";
 	}
 
 	public String toString() {

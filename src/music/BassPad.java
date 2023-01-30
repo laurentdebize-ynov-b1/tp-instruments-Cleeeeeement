@@ -7,6 +7,10 @@ public class BassPad extends ElectronicPercussion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public BassPad() {
+		
+	}
+	
 	public String demo() {
 		return " DOUMMMMMM ";
 	}

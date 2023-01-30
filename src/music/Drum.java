@@ -11,6 +11,10 @@ public abstract class Drum extends Instruments{
 		this.status = status ;
 	}
 	
+	public Drum() {
+		this.status = Status.DISASSEMBLED;
+	}
+	
 	public Status getStatus() {
 		return status;
 	}
@@ -48,4 +52,6 @@ public abstract class Drum extends Instruments{
 		}while(choice != 3);
 
 	}
+	
+	
 }

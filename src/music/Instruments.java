@@ -75,11 +75,11 @@ public abstract class Instruments {
 		
 		System.out.print("\n\nBrand : ");
 		this.brand = scanner.nextLine();
-		scanner.nextLine();
+		;
 		
 		System.out.print("\n\nModel : ");
 		this.model = scanner.nextLine();
-		scanner.nextLine();
+	
 		
 			
 	}

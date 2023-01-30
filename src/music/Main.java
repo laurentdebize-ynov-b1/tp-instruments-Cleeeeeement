@@ -25,13 +25,13 @@ public class Main {
 				+ "                                            \r\n"
 				+"Welcome to the best music store in the country (finally I think...)");
 		
-	Piano piano = new Piano(1200,"ou","eff",87,HammerWood.BEECH);
-	ArrangerKeyboard arranger = new ArrangerKeyboard(300,"refef","effef",81,10);
+	Piano piano = new Piano(1200,"95T","eff",87,HammerWood.BEECH);
+	ArrangerKeyboard arranger = new ArrangerKeyboard(300,"78I","effef",81,10);
 	ElectricGuitar electricGuitar = new ElectricGuitar(600, "Couic","Couac",7,StringedWood.ASH,"Bose");
 	Violin violin = new Violin(799, "Keanu", "Reeves",6, StringedWood.CEDAR);
 	BassDrum bassDrum = new BassDrum(120, "bomom", "tchachac", 20, PercussionMaterial.WOOD);
-	Tom tom = new Tom(120, "bomom", "tchachac", 20, PercussionMaterial.METAL);
-	AccousticDrum accousticDrum = new AccousticDrum(1100,"fefef","fefef", Status.ASSEMBLED, "Brand",new ArrayList<AccousticPercussion>(Arrays.asList(tom,bassDrum)));
+	Tom tom = new Tom(120, "Plick", "Plock", 20, PercussionMaterial.METAL);
+	AccousticDrum accousticDrum = new AccousticDrum(1100,"Mads","Mikkelsen", Status.ASSEMBLED, "Brand",new ArrayList<AccousticPercussion>(Arrays.asList(tom,bassDrum)));
 	
 	ArrayList<Instruments> instruments = new ArrayList<Instruments>();
 	instruments.add(electricGuitar);
@@ -48,8 +48,8 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("How can I help you ?");
 		System.out.println("\n\t 1 . Show all the instruments");
-		System.out.println("\t 2 . Sell an instrument ");
-		System.out.println("\t 3 . Buy an instrument ");
+		System.out.println("\t 2 . Buy an instrument ");
+		System.out.println("\t 3 . Sell an instrument ");
 		System.out.println("\t 4 . How many instruments in the collection ?");
 		System.out.println("\t 5 . Modify an instrument");
 		System.out.println("\t 6 . Leave the store");
@@ -70,10 +70,10 @@ public class Main {
 		
 		case 2 :
 			int choiceDelete;
-			System.out.print("What is the number of the instrument you want to sell ?\n\nnumber :");
+			System.out.print("What is the number of the instrument you want to buy ?\n\nnumber :");
 			choiceDelete = scanner.nextInt();
 			instruments.remove(choiceDelete-1);
-			System.out.println("\nThe instrument has been sold\n");
+			System.out.println("\nThe instrument has been bought\n");
 			break;
 		case 3 :
 			System.out.print("\nWhat category of instrument do you want to sell ?\n\t1. Stringed instrument\n\t2. Keyboard instrument\n\t3. Percussion Instrument\n\nchoose :");
@@ -116,7 +116,99 @@ public class Main {
 					break;
 
 				}
-				
+				break;
+			case 3 :{
+				System.out.print("\nWhich instrument ?\n\t1. Drum \n\t2. Percussion\n\nchoose :");
+				choiceBuy = scanner.nextInt();
+				switch(choiceBuy) {
+				case 1:
+					System.out.print("\nWhat type ?\n\t1. Electronic \n\t2. Accoustic\n\nchoose :");
+					choiceBuy = scanner.nextInt();
+					switch(choiceBuy) {
+					case 1 : 
+						ElectronicDrum newElectronicDrum = new ElectronicDrum();
+						newElectronicDrum.initialize();
+						instruments.add(newElectronicDrum);
+						System.out.println("\n\nYou sold a "+newElectronicDrum.toString()+"\nfor "+newElectronicDrum.getPrice()+"€\n");
+						break;
+					case 2 :
+						AccousticDrum newAccousticDrum = new AccousticDrum();
+						newAccousticDrum.initialize();
+						instruments.add(newAccousticDrum);
+						System.out.println("\n\nYou sold a "+newAccousticDrum.toString()+"\nfor "+newAccousticDrum.getPrice()+"€\n");
+						break;
+					}
+					break;
+				case 2:
+					System.out.print("\nWhat type ?\n\t1. Electronic \n\t2. Accoustic\n\nchoose :");
+					choiceBuy = scanner.nextInt();
+					switch(choiceBuy) {
+					case 1 :
+						System.out.print("\nWhich one ?\n\t1. Timpani Pad \n\t2. Bass Pad\n\t3. Tom Pad\n\nchoose :");
+						choiceBuy = scanner.nextInt();
+						switch(choiceBuy) {
+						case 1:
+							TimpaniPad newTimpaniPad = new TimpaniPad();
+							newTimpaniPad.initialize();
+							instruments.add(newTimpaniPad);
+							System.out.println("\n\nYou sold a "+newTimpaniPad.toString()+"\nfor "+newTimpaniPad.getPrice()+"€\n");
+							break;
+						case 2 :
+							BassPad newBassPad = new BassPad();
+							newBassPad.initialize();
+							instruments.add(newBassPad);
+							System.out.println("\n\nYou sold a "+newBassPad.toString()+"\nfor "+newBassPad.getPrice()+"€\n");
+							break;
+						case 3 :
+							TomPad newTomPad = new TomPad();
+							newTomPad.initialize();
+							instruments.add(newTomPad);
+							System.out.println("\n\nYou sold a "+newTomPad.toString()+"\nfor "+newTomPad.getPrice()+"€\n");
+							break;
+						}
+						break;
+					
+					case 2 :
+						System.out.print("\nWhich one ?\n\t1. Snare Drum \n\t2. Bass Drum\n\t3. Tom \n\t4. Cymbal\n\t5. Charleston\n\nchoose :");
+						choiceBuy = scanner.nextInt();
+						switch(choiceBuy) {
+						case 1:
+							SnareDrum newSnareDrum = new SnareDrum();
+							newSnareDrum.initialize();
+							instruments.add(newSnareDrum);
+							System.out.println("\n\nYou sold a "+newSnareDrum.toString()+"\nfor "+newSnareDrum.getPrice()+"€\n");
+							break;
+						case 2 :
+							BassDrum newBassDrum = new BassDrum();
+							newBassDrum.initialize();
+							instruments.add(newBassDrum);
+							System.out.println("\n\nYou sold a "+newBassDrum.toString()+"\nfor "+newBassDrum.getPrice()+"€\n");
+							break;
+						case 3 :
+							Tom newTom = new Tom();
+							newTom.initialize();
+							instruments.add(newTom);
+							System.out.println("\n\nYou sold a "+newTom.toString()+"\nfor "+newTom.getPrice()+"€\n");
+							break;
+						case 4 :
+							Cymbal newCymbal = new Cymbal();
+							newCymbal.initialize();
+							instruments.add(newCymbal);
+							System.out.println("\n\nYou sold a "+newCymbal.toString()+"\nfor "+newCymbal.getPrice()+"€\n");
+							break;
+						case 5 :
+							Charleston newCharleston = new Charleston();
+							newCharleston.initialize();
+							instruments.add(newCharleston);
+							System.out.println("\n\nYou sold a "+newCharleston.toString()+"\nfor "+newCharleston.getPrice()+"€\n");
+							break;
+						}
+						break;
+							
+						
+					}
+				}
+			}
 			}
 			break;
 		case 4 :

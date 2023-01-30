@@ -7,6 +7,10 @@ public class SnareDrum extends AccousticPercussion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public SnareDrum() {
+		
+	}
+	
 	public String demo() {
 		return " POOM ";
 	}

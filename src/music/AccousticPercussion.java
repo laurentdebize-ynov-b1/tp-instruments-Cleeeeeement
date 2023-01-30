@@ -6,6 +6,10 @@ public abstract class AccousticPercussion extends PercussionInstruments{
 		super(price, model, brand, diameter, material);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public AccousticPercussion() {
+		
+	}
 
 
 	public String toString() {

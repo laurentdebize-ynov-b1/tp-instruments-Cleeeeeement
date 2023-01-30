@@ -6,6 +6,10 @@ public abstract class ElectronicPercussion extends PercussionInstruments {
 		super(price, model, brand, diameter, material);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public ElectronicPercussion() {
+		
+	}
 
 	public String toString() {
 		return super.toString() + ", diameter:"+getDiameter()+", material:"+getMaterial();

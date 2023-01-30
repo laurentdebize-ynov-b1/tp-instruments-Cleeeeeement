@@ -7,6 +7,10 @@ public class BassDrum extends AccousticPercussion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public BassDrum() {
+		
+	}
+	
 	public String demo() {
 		return " POOM ";
 	}

@@ -7,6 +7,10 @@ public class TomPad extends ElectronicPercussion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public TomPad() {
+		
+	}
+	
 	public String demo() {
 		return " TCHAAK ";
 	}
