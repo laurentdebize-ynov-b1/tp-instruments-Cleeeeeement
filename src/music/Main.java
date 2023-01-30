@@ -47,7 +47,7 @@ public class Main {
 	do {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("How can I help you ?");
-		System.out.println("\n\t 1 . Show all the instruments");
+		System.out.println("\n\t 1 . Show me all the instruments");
 		System.out.println("\t 2 . Buy an instrument ");
 		System.out.println("\t 3 . Sell an instrument ");
 		System.out.println("\t 4 . How many instruments in the collection ?");
@@ -236,7 +236,7 @@ public class Main {
 			selectedInstrument.editMenu();
 			break;
 		case 6 :
-			System.out.println("\nGoodbye, see you later !");
+			System.out.println("\nGoodbye, see you soon !");
 			break;
 		}
 		
