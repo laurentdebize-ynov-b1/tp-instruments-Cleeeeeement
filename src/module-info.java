@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author coubl
+ *
+ */
+module MusicStore {
+}
